@@ -1,0 +1,586 @@
+// how funders images animation
+@keyframes FundersImages {
+    0% {
+        margin-left: -1000%;
+    }
+
+    85% {
+        transform: rotate(360deg);
+    }
+
+    90% {
+        margin: 0;
+    }
+
+    91% {
+        margin-left: 5%;
+    }
+
+    92% {
+        margin-left: -5%;
+    }
+
+    93% {
+        margin-left: 5%;
+    }
+
+    94% {
+        margin-left: -5%;
+    }
+
+    95% {
+        margin-left: 5%;
+    }
+
+    96% {
+        margin-left: -5%;
+    }
+
+    97% {
+        margin-left: 5%;
+    }
+
+    98% {
+        margin-left: -5%;
+    }
+
+    99% {
+        margin-left: 5%;
+    }
+
+    100% {
+        margin: 0;
+    }
+}
+
+@keyframes mardiGrasExplanationAndAboutTheMayor {
+    0% {
+        position: absolute;
+        left: -150vw;
+    }
+
+    100% {
+        position: 0;
+        left: 0;
+    }
+}
+
+@keyframes TimerBorderChanging {
+    0% {
+        border: 2px solid black;
+    }
+
+    100% {
+        border: 4px solid red;
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+
+
+    // section about funders + mayor + explanation about Mardi gras NO
+    section#funders-mayor {
+        background-image: linear-gradient(360deg, #9453a6, #8cbf3f, #f2cc0f, #f2f2f2, #0d0d0d);
+        width: 100%;
+        height: 80vh;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        // grid-template-rows: repeat(3, auto);
+        padding: 1vw;
+
+        @include phone-up-to-tablet {
+            height: 100%;
+            display: block;
+
+        }
+
+        div#allCardsContainer {
+            grid-column: 1;
+            grid-row: 1/3;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            text-align: center;
+            width: 40vw;
+            padding: 2vh;
+            margin-top: 5vh;
+
+            @include phone-up-to-tablet {
+                height: 100%;
+                width: 100%;
+                margin-top: 0;
+            }
+
+            div.funderCard {
+
+                img {
+                    width: 10vw;
+                    height: 12vh;
+                    border: 2px solid black;
+                    border-radius: 5%;
+                    animation-name: FundersImages;
+                    animation-duration: 2s;
+                    animation-timing-function: ease-out;
+                    grid-row-start: 1;
+                    grid-row-end: 4;
+
+                    @include phone-up-to-tablet {
+                        width: 40vw;
+                        height: 20vh;
+                    }
+
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+
+                }
+
+                h2 {
+                    font-size: 2vh;
+                    font-family: $headingFontFamily;
+                }
+            }
+        }
+
+        div#aboutMardiGras {
+            grid-column: 2/3;
+            grid-row: 1/1;
+            height: 20vh;
+            width: 40vw;
+            margin-top: 5vh;
+            animation-name: mardiGrasExplanationAndAboutTheMayor;
+            animation-timing-function: ease-in;
+            animation-duration: 4s;
+
+            @include phone-up-to-tablet {
+                height: 100%;
+                width: 100%;
+                animation-name: unset;
+                padding: 5%;
+            }
+
+
+
+            h2 {
+                font-size: 1.5vw;
+                font-family: $headingFontFamily;
+
+                @include phone-up-to-tablet {
+                    font-size: 2.5em;
+                }
+
+            }
+
+            p {
+                font-size: 1vw;
+                text-align: justify;
+                font-family: $textFontFamily;
+
+                @include phone-up-to-tablet {
+                    font-size: 1.2em;
+                }
+
+            }
+        }
+
+        div#mayor {
+            grid-column: 2/3;
+            grid-row: 2/3;
+            height: 30vh;
+            width: 45vw;
+            margin-bottom: 5vh;
+            animation-name: mardiGrasExplanationAndAboutTheMayor;
+            animation-timing-function: ease-in;
+            animation-duration: 5s;
+
+            @include phone-up-to-tablet {
+                height: 100%;
+                width: 100%;
+                padding: 5%;
+                animation-name: unset;
+            }
+
+            h2 {
+                font-size: 1.5vw;
+                font-family: $headingFontFamily;
+
+                @include phone-up-to-tablet {
+                    font-size: 2.5em;
+                }
+            }
+
+            p {
+                font-size: 1vw;
+                text-align: justify;
+                font-family: $textFontFamily;
+
+                @include phone-up-to-tablet {
+                    font-size: 1.2em;
+                }
+
+            }
+
+            img {
+                width: 13vw;
+                height: 20vh;
+
+                @include phone-up-to-tablet {
+                    width: 40vW;
+                }
+            }
+        }
+
+
+
+    }
+
+    /*  start all the funders popups */
+    section#allPopups {
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        left: 0;
+        top: 0;
+        display: none;
+        z-index: 2;
+
+
+        .all-popups-wrapper {
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.9);
+            position: fixed;
+            left: 0;
+            top: 0;
+            display: none;
+
+            button {
+                width: 5vw;
+                height: 6vh;
+                font-size: 2vw;
+                position: relative;
+                top: 2vh;
+                left: 2vw;
+            }
+
+            div.popup-inside {
+                text-align: center;
+                margin-top: 2vh;
+
+                h2 {
+                    font-size: 4vw;
+                    font-family: $headingFontFamily;
+                    color: white;
+                }
+
+                img {
+                    width: 25vw;
+                    border: 1px solid black;
+                }
+
+                p {
+                    margin: 3vh;
+                    font-family: $textFontFamily;
+                    font-size: 2vw;
+                    background-image: linear-gradient(90deg, black, red, blue, green);
+                    color: white
+                }
+
+                a {
+                    text-decoration: none;
+                    font-family: $textFontFamily;
+                    color: white;
+                    background-color: black;
+                    font-size: 2vw;
+                    padding: 1vw;
+
+                    &:hover {
+                        color: red;
+                        font-size: 2.5vw;
+                    }
+                }
+            }
+
+
+
+
+
+        }
+    }
+
+    /*  end all the funders popups */
+
+    /* changes in bootstraps slider */
+    div#carouselExampleCaptions {
+        height: 100%;
+        width: 100%;
+
+        @include phone-up-to-tablet {
+            display: none;
+        }
+
+        div.carousel-inner {
+            padding: 5vh 5vw;
+            background-image: linear-gradient(#9453a6, #8cbf3f, #f2cc0f, #f2f2f2, #0d0d0d);
+            width: 100%;
+            height: 100%;
+
+            @include phone-up-to-tablet {
+                height: 100%;
+            }
+
+            div.carousel-item {
+                @include phone-up-to-tablet {
+                    height: 95%;
+                }
+
+                .carousel-caption {
+
+                    h5 {
+                        font-family: $headingFontFamily;
+                        font-size: 2vw;
+                        color: blue;
+
+                        @include phone-up-to-tablet {
+                            font-size: 1.5em;
+                        }
+
+
+                    }
+
+                    p {
+                        font-family: $textFontFamily;
+                        font-size: 1.5vw;
+
+                        @include phone-up-to-tablet {
+                            font-size: 1em;
+                        }
+                    }
+                }
+
+                img {
+                    height: 85vh;
+                    width: 85vw;
+                    margin: 0 auto;
+
+                    @include phone-up-to-tablet {
+                        height: 40vh;
+                    }
+                }
+            }
+        }
+    }
+
+    div#aboutMGNO {
+        width: 100%;
+        height: 90vh;
+        background-image: linear-gradient(360deg, #9453a6, #8cbf3f, #f2cc0f, #f2f2f2, #0d0d0d);
+        padding: 2vw;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1vh;
+
+        @include phone-up-to-tablet {
+            display: block;
+            height: 100%;
+        }
+
+        #countDownTimer1 {
+            color: blue;
+            padding: 0.3vw;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            width: 20vw;
+            height: 25vh;
+            border: 1px solid black;
+            justify-content: center;
+            align-content: center;
+            gap: 0.5vw;
+            border-radius: 0.5vw;
+            animation-name: TimerBorderChanging;
+            animation-iteration-count: infinite;
+            animation-duration: 1s;
+
+            @include phone-up-to-tablet {
+                width: 100%;
+                height: 20%;
+                padding: 10%;
+                animation: unset;
+            }
+
+
+            div {
+                background-color: black;
+                text-align: center;
+                font-family: $textFontFamily;
+
+                color: red;
+
+                @include phone-up-to-tablet {
+
+                    font-size: 3.5vw;
+                }
+
+            }
+
+            #countHead {
+                grid-column: 1/5;
+                text-align: center;
+                padding: 1vw;
+                margin-bottom: 1vw;
+            }
+
+            h2 {
+                font-family: henny penny;
+                font-size: 1.1vw;
+
+                @include phone-up-to-tablet {
+
+                    font-size: 4.5vw;
+                }
+
+            }
+
+        }
+
+    }
+
+    #MGHistory {
+        grid-column: 2/4;
+        height: 25vh;
+
+        @include phone-up-to-tablet {
+
+            height: 100%;
+            margin-top: 30px;
+            padding: 10px;
+        }
+
+        h2 {
+            font-family: $headingFontFamily;
+            font-size: 2vw;
+
+            @include phone-up-to-tablet {
+                font-size: 1.5rem;
+            }
+        }
+
+        p {
+            font-family: $textFontFamily;
+            font-size: 1.4vh;
+            font-weight: 600;
+            text-align: justify;
+
+            @include phone-up-to-tablet {
+                font-size: 1rem;
+                font-weight: 300;
+            }
+        }
+    }
+
+    #PhotoContestWinners {
+        grid-column: 1/4;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1vh;
+        height: 60vh;
+
+        @include phone-up-to-tablet {
+            display: block;
+            height: 100%;
+            text-align: center;
+        }
+
+        img[alt="right arrow icon"] {
+            width: 6vw;
+
+            @include phone-up-to-tablet {
+                display: none;
+            }
+        }
+
+        h2 {
+            font-family: $headingFontFamily;
+            font-size: 1.8vw;
+
+            @include phone-up-to-tablet {
+                font-size: 1.7rem;
+            }
+        }
+
+        div {
+            text-align: center;
+            background-color: rgba($color: #000000, $alpha: 0.5);
+            padding: 1.5vw;
+            width: 30vw;
+            height: 55vh;
+
+            @include phone-up-to-tablet {
+                width: 100%;
+                height: 100%;
+                margin-top: 15px;
+
+            }
+
+            h3 {
+                font-family: $headingFontFamily;
+                font-size: 1.5vw;
+
+                @include phone-up-to-tablet {
+                    font-size: 1.5rem;
+                }
+            }
+
+            h4 {
+                font-family: $headingFontFamily;
+                font-size: 1.2vw;
+                font-size: 1.3rem;
+            }
+
+        }
+
+        img#FirW {
+            width: 12vw;
+            height: 35vh;
+
+            @include phone-up-to-tablet {
+                width: 80vw;
+                height: 95%;
+            }
+        }
+
+        img#SecW {
+            width: 25vw;
+            height: 35vh;
+
+            @include phone-up-to-tablet {
+                width: 80vw;
+                height: 95%;
+            }
+        }
+    }
+
+    #imagesOnPhoneMode {
+        display: none;
+        background-image: linear-gradient(#9453a6, #8cbf3f, #f2cc0f, #f2f2f2, #0d0d0d);
+        text-align: center;
+
+        width: 100%;
+
+        @include phone-up-to-tablet {
+            display: block;
+        }
+
+        img {
+            width: 85%;
+            margin-top: 1rem;
+        }
+
+    }
+}

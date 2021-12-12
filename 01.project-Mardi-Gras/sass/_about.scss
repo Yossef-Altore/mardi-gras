@@ -1,0 +1,125 @@
+@keyframes imageInAboutOpacity {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+section#aboutMainSection {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    padding: 2%;
+    gap: 2%;
+    min-height: 71vh;
+    max-height: 100%;
+    background-image: linear-gradient(-45deg, #9453a6, #8cbf3f, #f2cc0f, #f2f2f2, #0d0d0d);
+
+    @include phone-up-to-tablet {
+        display: block;
+        background-image: linear-gradient(180deg, #9453a6, #8cbf3f, #f2cc0f, #f2f2f2, #0d0d0d);
+    }
+
+    #allLinksToSubjects {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        border-right: 10px solid lightgray;
+        background-image: linear-gradient(-45deg, #9453a6, #8cbf3f);
+        padding: 1%;
+
+        @include phone-up-to-tablet {
+            width: 100%;
+            border-right: 0px solid lightgray;
+            border-bottom: 3px solid lightgray;
+            background-image: linear-gradient(80deg, #9453a6, #8cbf3f);
+        }
+
+
+        h2 {
+            margin-bottom: 2rem;
+            font-family: $headingFontFamily;
+            font-size: 2rem;
+        }
+
+        span {
+            font-family: $textFontFamily;
+            font-size: 1.4rem;
+            margin-bottom: 3%;
+            border-bottom: 1px solid #000;
+            width: 90%;
+            cursor: pointer;
+        }
+
+
+    }
+
+    #allTheSubjects {
+        background-image: linear-gradient(180deg, #f2cc0f, #f2f2f2, #0d0d0d);
+        padding: 1%;
+
+        #explenationOnReloading {
+            text-align: center;
+
+            h2 {
+                @include phone-up-to-tablet {
+                    display: none;
+                }
+            }
+
+            img {
+                width: 35vw;
+                animation: imageInAboutOpacity;
+                animation-duration: 4s;
+                animation-timing-function: ease-in-out;
+
+                @include phone-up-to-tablet {
+                    width: 100%;
+                    margin-top: 2%;
+                }
+
+            }
+        }
+
+        .subject {
+            margin-bottom: 1rem;
+
+            h1 {
+                margin-bottom: 0.8rem;
+                font-family: $headingFontFamily;
+                font-size: 3rem;
+
+                @include phone-up-to-tablet {
+                    font-size: 2rem;
+                }
+
+            }
+
+            p {
+                margin-bottom: 0.5rem;
+                text-align: justify;
+                font-family: $textFontFamily;
+                font-size: 2rem;
+
+                @include phone-up-to-tablet {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+
+        #subject1,
+        #subject2,
+        #subject3,
+        #subject4,
+        #subject5 {
+            display: none;
+        }
+
+
+    }
+
+}

@@ -1,0 +1,34 @@
+footer {
+    width: 100%;
+    height: 10vh;
+    background-image: linear-gradient(180deg, #9453a6, #8cbf3f, #f2cc0f, #f2f2f2, #0d0d0d);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+    overflow: hidden;
+
+
+    @include phone-up-to-tablet {
+        height: 100%;
+    }
+
+    p {
+        font-size: 2vw;
+        color: black;
+        font-family: $textFontFamily;
+
+        @include phone-up-to-tablet {
+            font-size: 0.9rem;
+        }
+    }
+
+    img {
+        height: 6vh;
+
+        @include phone-up-to-tablet {
+            height: 3vh;
+        }
+    }
+
+}

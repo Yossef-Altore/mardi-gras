@@ -1,0 +1,22 @@
+    @import url('https://fonts.googleapis.com/css2?family=Pattaya&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+    $textFontFamily: "Roboto";
+    $headingFontFamily: "Pattaya";
+
+    @mixin phone-up-to-tablet {
+        @media (max-width: 1100px) {
+            @content;
+        }
+    }
+
+
+
+    @import "header+nav";
+    @import "home";
+    @import "mainFooter";
+    @import "faq";
+    @import "about";
+    @import "media";
+    @import "contact";
+    @import "trevia";

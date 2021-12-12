@@ -1,0 +1,129 @@
+//ANIMATION OF THE ANSWER BOX
+@keyframes moveBox {
+    0% {
+        display: none;
+
+        opacity: 0;
+    }
+
+    100% {
+
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+.AllQueAndAnsWrapper {
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(-45deg, #9453a6, #8cbf3f, #f2cc0f, #f2f2f2, #0d0d0d);
+    min-height: 75vh;
+
+
+
+
+    .innerContainer {
+        width: 60%;
+        background-image: linear-gradient(-45deg, #9453a6, #8cbf3f, #f2cc0f, #f2f2f2, #0d0d0d);
+        margin: 0 auto;
+        padding: 0.5em;
+
+
+        @include phone-up-to-tablet {
+            width: 98%;
+        }
+
+
+
+
+        .QuesAndAnswerBox {
+            margin-bottom: 1vh;
+            width: 95%;
+
+            @include phone-up-to-tablet {
+                width: 95%;
+            }
+
+            .questionBox {
+
+                height: 100%;
+                margin: 0 auto;
+                font-size: 2rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1%;
+                cursor: pointer;
+                font-family: $headingFontFamily;
+                background-image: linear-gradient(-45deg, #9453a6, #8cbf3f, #f2cc0f, #f2f2f2, #0d0d0d);
+                margin: 0 auto;
+
+                &:hover {
+                    border: 1px solid red;
+                }
+
+                @include phone-up-to-tablet {
+                    font-size: 1.5rem;
+
+                    &:hover {
+                        border: 0;
+                    }
+                }
+
+                .sign {
+
+                    margin-left: 1vw;
+                    font-family: $textFontFamily;
+                }
+            }
+
+            .answer {
+                margin: 0 auto;
+                font-size: 1rem;
+                background-color: skyblue;
+                display: flex;
+                justify-content: space-between;
+                padding: 1%;
+                border-top: 1px solid #000;
+                overflow: hidden;
+                margin-top: 0.2vh;
+                margin-bottom: 1vh;
+                animation-name: moveBox;
+                animation-duration: 2s;
+                animation-timing-function: ease-in-out;
+                background-color: lightgray;
+
+                //answer text
+                small {
+
+                    animation-duration: 2.5s;
+                    animation-timing-function: ease-in-out;
+                    text-align: justify;
+                    font-family: $textFontFamily;
+
+                }
+            }
+
+            //when adding new answer you must add the id here
+            #answer1,
+            #answer2,
+            #answer3,
+            #answer4,
+            #answer5,
+            #answer6,
+            #answer7,
+            #answer8,
+            #answer9,
+            #answer10,
+            #answer11,
+            #answer12 {
+
+                display: none;
+            }
+        }
+    }
+}

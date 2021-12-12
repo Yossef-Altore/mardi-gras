@@ -1,0 +1,116 @@
+#mainSectionInContact {
+  background-image: linear-gradient(
+    -45deg,
+    #9453a6,
+    #8cbf3f,
+    #f2cc0f,
+    #f2f2f2,
+    #0d0d0d
+  );
+  min-height: 85vh;
+
+  #contactUsAndMap {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+
+    @include phone-up-to-tablet {
+      display: block;
+      padding: 0.5rem;
+    }
+
+    #map {
+      margin-top: 4rem;
+      margin-right: 5rem;
+
+      @include phone-up-to-tablet {
+        width: 100%;
+        height: 50vh;
+        text-align: center;
+      }
+
+      iframe {
+        @include phone-up-to-tablet {
+          width: 99%;
+          height: 90%;
+        }
+      }
+    }
+
+    #contactForm {
+      //  width: 60vw;
+      padding: 1rem;
+
+      h1 {
+        font-family: $textFontFamily;
+        margin-bottom: 1rem;
+        color: #8cbf3f;
+      }
+
+      form {
+        label {
+          font-family: $textFontFamily;
+          font-size: 1.5rem;
+          color: #f2cc0f;
+          display: block;
+          margin-top: 0.5rem;
+          @include phone-up-to-tablet {
+            display: none;
+          }
+        }
+
+        input {
+          width: 17rem;
+          height: 2rem;
+          background-image: linear-gradient(80deg, #8cbf3f, #f2cc0f, #f2f2f2);
+          font-family: $textFontFamily;
+          font-size: 1.5rem;
+          padding: 0.2rem;
+          &::placeholder {
+            opacity: 0;
+          }
+          @include phone-up-to-tablet {
+            margin-top: 0.5rem;
+            &::placeholder {
+              opacity: 1;
+            }
+          }
+        }
+
+        textArea {
+          width: 17rem;
+          resize: none;
+          background-image: linear-gradient(80deg, #8cbf3f, #f2cc0f, #f2f2f2);
+          font-family: $textFontFamily;
+          font-size: 1rem;
+          color: black;
+          padding: 0.5rem;
+        }
+
+        span#txtAreaHeader {
+          font-family: $textFontFamily;
+          font-size: 1.5rem;
+          color: #9453a6;
+        }
+
+        input[type="submit"] {
+          padding: 0.5rem;
+          height: 100%;
+
+          &:hover {
+            background-image: linear-gradient(
+              -45deg,
+              #8cbf3f,
+              #f2cc0f,
+              #f2f2f2
+            );
+          }
+
+          &:active {
+            box-shadow: 5px 5px 5px gray;
+          }
+        }
+      }
+    }
+  }
+}
